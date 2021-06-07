@@ -1,12 +1,6 @@
-# :zap: HTML-JS-Websocket
+# :zap: HTML-JS-Websockets
 
 * HTML-Javascript app using Websockets to connect to the [Binance](www.binance.com) web server and display dynamic financial data.
-
-![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/html-js-websocket?style=plastic)
-![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/html-js-websocket?style=plastic)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/html-js-websocket?style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/html-js-websocket?style=plastic)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/ionic-angular-world-data?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -21,7 +15,7 @@
 
 ## :books: General info
 
-* Financial data received from [Binance](www.binance.com)
+* Cryptocurrency data received from [Binance](www.binance.com)
 
 ## :camera: Screenshots
 
@@ -29,13 +23,14 @@
 
 ## :signal_strength: Technologies
 
-* [HTML5](https://html.spec.whatwg.org/)
-* [Websocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) communication session
+* [HTML5](https://html.spec.whatwg.org/) markup language
+* [Websockets API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) communication session
 * [Binance Websocket Streams](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md) base endpoint: wss://stream.binance.com:9443
 
 ## :floppy_disk: Setup
 
-* Run using a live server such as the [VS Code Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+* Display the HTML file using a live server such as the [VS Code Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+* The template price data updates automatically due to the Websockets communication channel [onmesssage event handler](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage).
 
 ## :computer: Code Examples
 
@@ -68,7 +63,7 @@ ws.onmessage = (event) => {
 ## :clipboard: Status & To-do list
 
 * Status: Working
-* To-do: Expand data shown. Consider unsubscribing
+* To-do: Expand data shown.
 
 ## :clap: Inspiration
 
