@@ -43,28 +43,28 @@
 * extract from `app.js` to assign [innertext](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) to HTML elements.
 
 ```javascript
-ws.onmessage = (event) => {
-  let stockObject = JSON.parse(event.data);
-  console.log("stockObject: ", stockObject);
+ws1.onmessage = (event) => {
+	let stockObject = JSON.parse(event.data);
+	console.log("stockObject: ", stockObject);
 
-  let name = stockObject.s;
-  let price = parseFloat(stockObject.p).toFixed(2);
-  stockNameElement.innerText = name;
-  stockPriceElement.innerText = price;
+	let name = stockObject.s;
+	let price = parseFloat(stockObject.p).toFixed(2);
+	stockNameElement1.innerText = name;
+	stockPriceElement1.innerText = price;
 
-  stockPriceElement.style.color =
-    !lastPrice || lastPrice === price
-      ? "black"
-      : price > lastPrice
-      ? "green"
-      : "red";
-  lastPrice = price;
+	stockPriceElement1.style.color =
+		!lastPrice || lastPrice === price
+			? "black"
+			: price > lastPrice
+			? "green"
+			: "red";
+	lastPrice = price;
 };
 ```
 
 ## :cool: Features
 
-* Websockets is easy to use
+* Websockets are easy to use
 
 ## :clipboard: Status & To-do list
 
