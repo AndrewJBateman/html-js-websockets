@@ -25,7 +25,7 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./img/data.png).
+![Example screenshot](./img/list.png).
 
 ## :signal_strength: Technologies
 
@@ -43,23 +43,20 @@
 * extract from `app.js` to assign [innertext](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) to HTML elements.
 
 ```javascript
-ws1.onmessage = (event) => {
-	let stockObject = JSON.parse(event.data);
-	console.log("stockObject: ", stockObject);
+// extract stock symbol
+// add stock name to stockStreams array if not there already then display name, volume traded and close price
+const handleStock = (stock) => {
+	const stockStream = stock.s // e.g. RNDRBUSD
+	const stockStreamClose = stock.c // close price
 
-	let name = stockObject.s;
-	let price = parseFloat(stockObject.p).toFixed(2);
-	stockNameElement1.innerText = name;
-	stockPriceElement1.innerText = price;
-
-	stockPriceElement1.style.color =
-		!lastPrice || lastPrice === price
-			? "black"
-			: price > lastPrice
-			? "green"
-			: "red";
-	lastPrice = price;
-};
+	if (stockStreams.indexOf(stockStream) === -1) {
+		document.getElementById('stockStreams').innerHTML += '<br/>' + stockStream + ': <span id="stockStream_' + stockStream + '"></span>' + ': <span id="stockStreamClose' + stockStream + '"></span>';
+		stockStreams.push(stockStream);
+		document.getElementById('sumStreams').innerText = stockStreams.length;
+	}
+	document.getElementById('stockStream_' + stockStream).innerText = parseFloat(stock.v).toFixed(0);
+	document.getElementById('stockStreamClose' + stockStream).innerText = parseFloat(stock.c).toFixed(2);
+}
 ```
 
 ## :cool: Features
@@ -69,7 +66,7 @@ ws1.onmessage = (event) => {
 ## :clipboard: Status & To-do list
 
 * Status: Working
-* To-do: Expand data shown.
+* To-do: Expand data shown and convert to tqble
 
 ## :clap: Inspiration
 
